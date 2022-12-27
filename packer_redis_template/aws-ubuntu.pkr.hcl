@@ -8,7 +8,7 @@ packer {
 }
 
 source "amazon-ebs" "ubuntu" {
-  ami_name      = "learn-packer-linux-aws-redis"
+  ami_name      = "learn-packer-linux-aws-redis-msg"
   instance_type = "t2.micro"
   region        = "us-west-2"
   source_ami_filter {
@@ -41,6 +41,9 @@ build {
     "echo \"FOO is $FOO\" > example.txt",
   ]
  }
+  provisioner "shell" {
+    inline = ["echo This provisioner runs last"]
+  }
 
 }
 
