@@ -1,4 +1,5 @@
 # packer
+2 important topics, builders and communicators. 
 
 ## How to build an AMI in AWS
 
@@ -28,3 +29,21 @@ Communicators are the mechanism Packer uses to upload files, executer scripts, e
 - winrm
 
 Also for example for docker builder there are docker communicator that uses docker exec or docker cp. 
+
+## Command 
+
+Initialize my Packer configuration: 
+
+``packer init . ``
+
+Format template: 
+
+``packer fmt .``
+
+Syntactically validation:
+
+``packer validate .``
+
+Build packer image: 
+
+`` packer build aws-ubuntu-pkr.hcl``
